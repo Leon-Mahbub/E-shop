@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace CandyShop.Models
 {
-    public interface ICandyRepository
+    public interface  ICandyRepository
     {
         IEnumerable<Candy> GetAllCandy { get; }
         IEnumerable<Candy> GetCandyOnSale { get; }
-        Candy GetCandyById(int CandyId);
+        Candy GetCandyById(int candyId);
     }
 }

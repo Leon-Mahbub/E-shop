@@ -8,5 +8,6 @@ namespace CandyShop.Models
     public interface ICategoryRepository
     {
         IEnumerable<Category> GetAllCategories { get; }
+        
     }
 }
