@@ -7,11 +7,12 @@ namespace CandyShop.Models
 {
     public class CategoryRepository : ICategoryRepository
     {
-        public IEnumerable<Category> GetAllCategories => new List<Category>
+        private readonly AppDbContext _appDbContext;
+        public CategoryRepository(AppDbContext appDbContext)
         {
-            new Category{CategoryId=1, CategoryName="Hard Candy", CategoryDesctiption="Awsome and Delicious Hard Candy"},
-            new Category{CategoryId=2, CategoryName="Chocolate Candy", CategoryDesctiption="Scuptious Chocolate Candy"},
-            new Category{CategoryId=3, CategoryName="Fruit", CategoryDesctiption="Sweet and Sour Frout Candy"}
-        };
+            _appDbContext = appDbContext;
+        }
+        public IEnumerable<Category> GetAllCategories => _appDbContext.Categories;
+       
     }
 }
